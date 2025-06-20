@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento Avanzado</title>
+    <link rel="stylesheet" href="assets/css/posicionamiento.css">
+</head>
+<body>
+    <h1>Posicionamiento Avanzado: propuedades clave</h1>
+
+    <hr>
+
+    <h2>Ejercicio 1: El flujo normal y la posición estática</h2>
+    <p>Los elementos con `position: static` (el valor por defecto) se colocan según el flujo normal del documento y no pueden ser movidos con `top`, `right`, `bottom`, `left`</p>
+    <div class="caja static-1">Caja estática 1</div>
+    <div class="caja static-2">Caja estática 2</div>
+    <div class="caja static-3">Caja estática 3</div>
+
+    <hr>
+
+    <h2>Ejercicio 2: La posición relativa</h2>
+    <p>Los elementos con la posición "relative" se mueven desde su posición original, pero "conservan el espacio" que ocuparian en el flujo normal, solo afecta visualmente al elemento.</p>
+    <div class="caja relative-antes">Caja Relativa (antes)</div>
+    <div class="caja relative-movida">Caja Relativa (movida)</div>
+    <div class="caja relative-despues">Caja Relativa (después)</div>
+
+    <hr>
+
+    <h2>Ejercicio 3: La posición absoluta y el contenedor Padre</h2>
+    <p>Los elementos con la posición "absolute" se quitan del flujo normal. Se posicionan respecto al anscestro "posicionado" (pero no estático) más cercano. Si no hay uno, se posiciona con respecto al "body".</p>
+    <div class="contenedor-padre">
+        Contenedor padre (position: relative)
+        <div class="caja absolute-esquina-superior">Absoluta Sup. Izq.</div>
+        <div class="caja absolute-esquina-inferior">Absoluta Inf. Der.</div>
+    </div>
+    <div class="caja fuera-de-flujo">
+        Caja fuera del flujo normal (absolute)
+    </div>
+
+    <hr>
+
+    <h2>Ejercicio 4: La posición fija (fixed)</h2>
+    <p>Los elementos con la posición "fixed" se posicionan respecto a la ventana del navegador, no se mueven al hacer scroll.</p>
+    <small>* div "siempre visible" es el elemento con la posición fixed.</small>
+    <div class="caja fixed-boton-derecha">Siempre visible</div>
+
+    <hr>
+
+    <h2>Ejercicio 5: La posición sticky</h2>
+    <p>Un elemento "sticky" es similar al comportamiento de "relative" 
+        hasta que se alcanza un cierto punto de desplazamiento,
+        momento en el que se comporta como "fixed".</p>
+    </p>
+    <div class="contenido-sticky">
+        <h3 class="sticky-header">Encabezado del scroll</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores saepe iusto fuga, temporibus, magnam incidunt commodi voluptatem quos distinctio libero in deserunt eligendi voluptate? Porro est molestiae exercitationem accusantium temporibus.</p>
+        <p>Quidem, cumque. Doloribus, voluptates. Quisquam, cumque. Doloribus, voluptates. Quisquam, cumque. Doloribus, voluptates.</p>
+        <p>Quidem, cumque. Doloribus, voluptates. Quisquam, cumque. Doloribus, voluptates. Quisquam, cumque. Doloribus, voluptates.</p>
+    </div>
+
+    <p>Más contenido después del elemento sticky...</p>
+
+    <hr>
+
+    <h2>Ejercicio 6: z-index (orden de apilamiento)</h2>
+    <p>El "z-index" controla el orden de apilamiento de los elementos "posicionados" que se superponen.</p>
+    <div class="contenedor-z-index">
+        <div class="caja superpuesta z-1">Z-Index 1</div>
+        <div class="caja superpuesta z-2">Z-Index 2</div>
+        <div class="caja superpuesta z-3">Z-Index 3</div>
+    </div>
+
+</body>
+</html>

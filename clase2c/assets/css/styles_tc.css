@@ -1,0 +1,61 @@
+* {
+    margin: 0;              /* Elimina el margen */
+    padding: 0;             /* Elimina el relleno */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total */
+}
+
+body {
+    margin: 20px; /* Margen alrededor del cuerpo */
+}
+
+.poema {
+    font-family: 'Georgia', serif; /* Fuente serif para el poema */
+    font-size: 18px; /* Tamaño de fuente */
+    color: dodgerblue; /* Color del texto */
+    text-align:end; /* Alineación del texto */
+    font-weight: bolder;
+    line-height: 1.8; /* Altura de línea para mejorar la legibilidad */
+    text-transform: uppercase; /* Transformación del texto a mayúsculas */
+    text-decoration: underline; /* Subrayado del texto */
+    font-style: italic; /* Estilo de fuente en cursiva */
+}
+
+.tarjeta {
+    background-color: #97e6fa;
+    color: #333;
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 320px;
+}
+
+.bg-color {
+    background-image: url('../images/ejemplo_2.webp'); /* Imagen de fondo */
+    background-size:contain; /* Ajusta la imagen al tamaño del contenedor */
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.dialog-ok {
+    background-color: #00b646;
+    color: white;
+    margin: 25px;
+    padding: 30px; /* Espacio interno */
+    border-radius: 15px;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px; /* Tamaño de fuente */
+    border: solid 2px #00782e;
+    text-align: center;
+}
+
+.dialog-error {
+    background-color: #ff4d4d;
+    color: white;
+    margin: 25px;
+    padding: 30px; /* Espacio interno */
+    border-radius: 15px;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px; /* Tamaño de fuente */
+    border: solid 2px #b30000;
+    text-align: center;
+    margin-bottom: 50px;
+}

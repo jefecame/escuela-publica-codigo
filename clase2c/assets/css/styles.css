@@ -1,0 +1,83 @@
+* {
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 20px; /* Espaciado interno */
+    /* background-color: #f0f0f0; */
+    background-image: url("https://img.freepik.com/free-vector/gradient-abstract-wireframe-background_23-2149009903.jpg?t=st=1747931131~exp=1747934731~hmac=ad5e50eab128baf7fc36130091548bd0bcfae2b386be4e31436ea24480b048b8&w=2000");
+}
+
+label {
+    font-weight: bolder; /* Negrita */
+}
+
+input {
+    width: 100%; /* Ancho */
+    height: 25px; /* Altura */
+    border: solid 1px #c5c5c5; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio inferior */
+    margin-top: 5px;
+}
+
+input:focus {
+    /* Pseudoclase cambia color del input (focus) */
+    border: solid 2px #0596f7; /* Color del borde */
+}
+
+input:valid {
+    border: solid 1px #02b63b; /* Color del borde */
+}
+
+input:invalid {
+    border: solid 1px #ff3e3e; /* Color del borde */
+}
+
+button {
+    width: 80px; /* Ancho */
+    margin-top: 10px;
+    background-color: #00a2ff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: solid 3px #007acc; /* Color del borde */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: all 0.8s ease; /* Transición suave */
+}
+
+button:hover {
+    /* pseudoclase cambia color del botón (hover) */
+    background-color: #1d54c3;
+    border: solid 3px #1040ae; /* Color del borde */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.mi-formulario {
+    width: 220px; /* Ancho */
+    background-color: white; /* Color de fondo */
+    padding: 25px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12); /* Sombra */
+}
+
+.espacio {
+    margin-left: 5px;
+}
+
+#titulo {
+    font-size: 18px; /* Tamaño de la fuente */
+    text-align: center; /* Centrar texto */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+#reset {
+    background-color: #8c00ff; /* Color de fondo */
+    border: solid 3px #6100c1; /* Color del borde */
+}

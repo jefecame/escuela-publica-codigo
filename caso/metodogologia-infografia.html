@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Metodología de Estudio de Caso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Application Structure Plan: La infografía se estructura como una narrativa lineal y desplazable, con cuatro secciones principales, una para cada etapa de la metodología. Cada sección es una "tarjeta" visual que combina una descripción textual con una visualización de datos relevante. Este diseño fue elegido por su simplicidad y claridad, permitiendo a los usuarios consumir la información de manera secuencial y lógica, similar a leer un informe, pero con el beneficio añadido de las visualizaciones de datos para una comprensión más rápida. -->
+    <!-- Visualization & Content Choices: Etapa 1 -> Informar sobre el foco individual -> Gráfico de Donut (Chart.js) para mostrar la distribución del esfuerzo -> Justificación: Visualiza claramente las proporciones de las tareas. Etapa 2 -> Comparar los objetivos del equipo -> Gráfico de Barras Horizontales (Chart.js) -> Justificación: Compara eficazmente los valores de diferentes objetivos colaborativos, con espacio para etiquetas claras. Etapa 3 -> Organizar las facetas de la discusión -> Gráfico de Radar (Chart.js) -> Justificación: Muestra datos multivariados (habilidades de discusión) en un formato compacto. Etapa 4 -> Informar sobre las preguntas clave -> Bloques de texto estilizados (HTML/Tailwind) -> Justificación: El contenido es cualitativo y se presenta mejor como texto destacado. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c]">Metodología de Estudio de Caso</h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Un viaje estructurado en cuatro etapas desde la preparación individual hasta la reflexión profunda para una resolución de problemas efectiva.</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="md:pr-8">
+                        <span class="text-sm font-bold text-[#f95d6a]">ETAPA 1</span>
+                        <h2 class="text-3xl font-bold text-[#003f5c] mt-2">Familiarización y Preparación Individual</h2>
+                        <p class="mt-4 text-base">Esta fase inicial se centra en la presentación y familiarización con el caso. Cada estudiante, de manera individual, deberá desarrollar una estrategia para abordar la situación planteada y realizar un estudio preliminar exhaustivo. Es el cimiento sobre el cual se construirá todo el análisis posterior.</p>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="stage1Chart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-slate-500 mt-2">Distribución del Esfuerzo Individual</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                     <div class="md:order-2 md:pl-8">
+                        <span class="text-sm font-bold text-[#ff7c43]">ETAPA 2</span>
+                        <h2 class="text-3xl font-bold text-[#003f5c] mt-2">Análisis y Colaboración en Equipo</h2>
+                        <p class="mt-4 text-base">La segunda etapa consiste en el análisis detallado del caso y la integración de equipos colaborativos. El propósito no es obtener una respuesta única, sino facilitar la clarificación de múltiples aspectos del caso, fomentar la expresión de diversos puntos de vista y identificar colectivamente fortalezas y debilidades.</p>
+                    </div>
+                    <div class="md:order-1">
+                        <div class="chart-container" style="height: 380px;">
+                            <canvas id="stage2Chart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-slate-500 mt-2">Objetivos Clave del Trabajo en Equipo</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="md:pr-8">
+                        <span class="text-sm font-bold text-[#a05195]">ETAPA 3</span>
+                        <h2 class="text-3xl font-bold text-[#003f5c] mt-2">Conclusiones y Recomendaciones</h2>
+                        <p class="mt-4 text-base">La tercera etapa se enfoca en la preparación de conclusiones y recomendaciones. Durante la discusión grupal se analizará, reflexionará y debatirá la propuesta de solución para el caso, siempre bajo el monitoreo del docente. Se evalúan diversas alternativas para llegar a un consenso informado.</p>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="stage3Chart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-slate-500 mt-2">Facetas de la Discusión Grupal</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="text-center">
+                    <span class="text-sm font-bold text-[#665191]">ETAPA 4</span>
+                    <h2 class="text-3xl font-bold text-[#003f5c] mt-2">Reflexión Individual Final</h2>
+                    <p class="mt-4 text-base max-w-3xl mx-auto">La etapa final culmina con una reflexión individual. El estudiante deberá cuestionarse sobre su aprendizaje adquirido y cómo puede implementar los conocimientos metodológicos en su vida personal y profesional. Es un momento clave para la metacognición.</p>
+                    <div class="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <div class="bg-[#003f5c]/5 p-6 rounded-lg border-l-4 border-[#665191]">
+                            <p class="text-lg font-semibold text-slate-800">¿Qué he aprendido y cómo puedo implementar los conocimientos adquiridos en mi vida?</p>
+                        </div>
+                        <div class="bg-[#003f5c]/5 p-6 rounded-lg border-l-4 border-[#665191]">
+                            <p class="text-lg font-semibold text-slate-800">¿Cambió mi perspectiva del caso tras interactuar y escuchar a mis compañeros?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="text-center mt-12 mb-6">
+            <p class="text-sm text-slate-500">Infografía generada a partir del informe "Metodología de Estudio de Caso Mejorada".</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const wrapLabels = (label, maxWidth) => {
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine += ' ' + word;
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const stage1Ctx = document.getElementById('stage1Chart').getContext('2d');
+            new Chart(stage1Ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Estudio Preliminar', 'Desarrollo de Estrategia'],
+                    datasets: [{
+                        data: [65, 35],
+                        backgroundColor: ['#f95d6a', '#ffa600'],
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { size: 14 } } },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const stage2Ctx = document.getElementById('stage2Chart').getContext('2d');
+            new Chart(stage2Ctx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabels('Facilitar la clarificación de múltiples aspectos del caso', 16),
+                        wrapLabels('Fomentar la expresión de diversos puntos de vista', 16),
+                        wrapLabels('Identificar colectivamente fortalezas y debilidades', 16)
+                    ],
+                    datasets: [{
+                        label: 'Importancia',
+                        data: [85, 95, 78],
+                        backgroundColor: ['#ff7c43', '#f95d6a', '#d45087'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    },
+                    scales: {
+                        x: { grid: { display: false }, suggestedMax: 100 },
+                        y: { grid: { display: false }, ticks: { font: { size: 14 } } }
+                    }
+                }
+            });
+
+            const stage3Ctx = document.getElementById('stage3Chart').getContext('2d');
+            new Chart(stage3Ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Analizar', 'Reflexionar', 'Debatir', 'Evaluar', 'Concluir'],
+                    datasets: [{
+                        label: 'Nivel de Actividad',
+                        data: [80, 90, 75, 85, 95],
+                        backgroundColor: 'rgba(160, 81, 149, 0.2)',
+                        borderColor: 'rgba(160, 81, 149, 1)',
+                        pointBackgroundColor: 'rgba(160, 81, 149, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(160, 81, 149, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 63, 92, 0.1)' },
+                            grid: { color: 'rgba(0, 63, 92, 0.1)' },
+                            pointLabels: { font: { size: 14 } },
+                            ticks: { backdropColor: 'transparent' },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

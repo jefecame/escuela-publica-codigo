@@ -1,0 +1,17 @@
+/* Cuerpo */
+
+body {
+    font-family: "Quicksand", "Segoe UI Rounded", "Segoe UI", Arial, sans-serif;
+}
+
+/* Encabezado */
+
+header {
+    background: linear-gradient(90deg, #23272a 60%, #1976d2 100%);
+}
+
+/* Título  */
+
+h1 {
+    color: #90caf9;
+}

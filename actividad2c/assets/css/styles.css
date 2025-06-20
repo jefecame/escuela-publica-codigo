@@ -1,0 +1,62 @@
+/* cuerpo */
+
+body {
+    font-family: "Quicksand", "Segoe UI Rounded", "Segoe UI", Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Encabezado y barra de navegación */
+
+nav {
+    background: linear-gradient(180deg, var(--bs-warning) 0%, var(--bs-warning-bg-subtle) 100%);
+}
+
+/* Foco de fieldset y form controls */
+
+.fieldset-control:focus-within,
+.form-control:focus {
+    border-color: var(--bs-warning);
+    box-shadow: 0 0 0.5rem 0 var(--bs-warning);
+}
+
+/* Hover y click del botón */
+
+.btn-custom-hover:hover,
+.btn-custom-hover:focus {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-warning);
+    color: white;
+}
+
+.btn-custom-hover:active {
+    background-color: black !important;
+    border-color: var(--bs-warning) !important;
+    color: var(--bs-warning) !important;
+}
+
+/* Animación de secciones */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInMove 1s ease forwards;
+}
+
+@keyframes fadeInMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#sobre-mi {
+    animation-delay: 0.2s;
+}
+
+#proyectos {
+    animation-delay: 0.4s;
+}
+
+#contacto {
+    animation-delay: 0.6s;
+}

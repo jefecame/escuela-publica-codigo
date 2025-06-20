@@ -1,0 +1,192 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #2c3e50;
+    margin: 20px 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.caja {
+    width: 150px;
+    height: 80px;
+    background-color: #a4f4ff;
+    border: 2px solid #2c3e50;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    line-height: 80px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+/* Ejercicio 1 - posición estática */
+
+.caja:hover {
+    background-color: #7ec8e3;
+}
+
+.static-1 {
+    position: static;
+    background-color: #d4edda;
+}
+
+.static-2 {
+    /* top: 20px; No tienen efecto porque la posición es estática */
+    /* left: 200px; No tienen efecto porque la posición es estática */
+    background-color: #fff3cd;
+}
+
+.static-3 {
+    background-color: #f8d7da;
+}
+
+/* Ejercicio 2 - posición relativa */
+
+.relative-antes {
+    width: 250px;
+    background-color: antiquewhite;
+}
+
+.relative-movida {
+    width: 250px;
+    position: relative;
+    top: 30px; /* Mueve la caja 30px hacia abajo */
+    left: 50px; /* Mueve la caja 50px hacia la derecha */
+}
+
+.relative-despues {
+    width: 250px;
+    background-color: aliceblue;
+}
+
+/* Ejercicio 3 - posición absoluta */
+
+.contenedor-padre {
+    width: 500px;
+    height: 300px;
+    border: 3px dashed #ff9d00;
+    background-color: #fff0f0;
+    margin: 30px auto;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    line-height: 250px;
+}
+
+.absolute-esquina-superior {
+    position: absolute;
+    top: 10px; /* 10px desde la parte superior del contenedor */
+    left: 10px; /* 10px desde la parte izquierda del contenedor */
+    background-color: #ff9d00;
+    width: 150px;
+    height: 50px;    
+}
+
+.absolute-esquina-inferior {
+    position: absolute;
+    bottom: 10px; /* 10px desde la parte superior del contenedor */
+    right: 10px; /* 10px desde la parte izquierda del contenedor */
+    background-color: #00b7ff;
+    width: 150px;
+    height: 50px;   
+}
+
+.fuera-de-flujo {
+    width: 350px;
+    margin: 25px auto;
+}
+
+/* Ejercicio 4 - posición fija (fixed) */
+.fixed-boton-derecha {
+    position: fixed; /* Fija en la pantalla */
+    bottom: 20px; /* 20px desde la parte inferior de la ventana */
+    right: 20px; /* 20px desde la parte derecha de la ventana */
+    background-color: #28a745;
+    color: white;
+    width: 100px;
+    height: 50px;
+    line-height: 1.5;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Ejercicio 5 - posición sticky */
+
+.contenido-sticky {
+    background-color: #ffeaa4;
+    padding: 1px;
+    margin-top: 30px;
+    height: 250px;
+    overflow-y: auto;
+    border: 2px dashed #edae0c;
+    position: relative; /* Asegura que sticky no se "escape" si no hay un scroll */
+}
+
+.sticky-header {
+    background-color: #ffd753;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 2px solid #be9f00;
+    position: sticky;
+    top: 0; /* Se adhiere al top del contenedor cuando se hace scroll */
+    z-index: 10; /* Asegura que el header esté por encima del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ejercicio 6 - z-index */
+
+.contenedor-z-index {
+    width: 400px;
+    height: 300px;
+    position: absolute; /* Posición absoluta para que el z-index funcione (no funciona en elementos estáticos) */
+    border: 3px solid #6c757d;
+    background-color: #c5d8ec;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.superpuesta {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+}
+
+.z-1 {
+    background-color: crimson;
+    top: 50px; /* 50px desde la parte superior del contenedor */
+    left: 50px; /* 50px desde la parte izquierda del contenedor */
+    z-index: 3; /* Nivel de apilamiento más bajo */
+}
+
+.z-2 {
+    background-color: #00b7ff;
+    top: 80px; /* 80px desde la parte superior del contenedor */
+    left: 80px; /* 80px desde la parte izquierda del contenedor */
+    z-index: 2; /* Nivel intermedio */
+}
+
+.z-3 {
+    background-color: rgb(43, 220, 20);
+    top: 110px; /* 50px desde la parte superior del contenedor */
+    left: 110px; /* 50px desde la parte izquierda del contenedor */
+    z-index: 1; /* Nivel de apilamiento más alto */
+}

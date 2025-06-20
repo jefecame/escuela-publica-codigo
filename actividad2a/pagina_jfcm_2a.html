@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Evita el zoom automático -->
+        <title>Formulario de Encuesta</title>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+        <!-- Vincula la fuente Quicksand de Google Fonts -->
+        <link rel="stylesheet" href="estilos_jfcm_2a.css" />
+        <!-- Vincula el archivo CSS externo -->
+    </head>
+    <body>
+        <form action="https://httpbin.org/post" method="post" target="_blank">
+            <!-- Usando un servicio de prueba de formularios -->
+
+            <fieldset>
+                <!-- Grupo de Datos personales -->
+                <legend>Datos</legend>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                </div>
+                <div>
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" placeholder="Tu edad" maxlength="3" pattern="^[1-9][0-9]{0,2}$" required />
+                </div>
+                <div>
+                    <p>Género:</p>
+                    <input type="radio" id="masculino" name="genero" value="masculino" required />
+                    <label for="masculino">Masculino</label><br />
+                    <input type="radio" id="femenino" name="genero" value="femenino" />
+                    <label for="femenino">Femenino</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <!-- Grupo de Preguntas de selección múltiple -->
+                <legend>Preguntas</legend>
+                <div>
+                    <p>Pregunta 1: ¿Cuál es la etiqueta correcta para crear un enlace en HTML?</p>
+                    <div class="pregunta-opciones">
+                        <input type="radio" id="p1a" name="pregunta1" value="&lt;url&gt;" required />
+                        <label for="p1a">&lt;url&gt;</label>
+                        <input type="radio" id="p1b" name="pregunta1" value="&lt;link&gt;" />
+                        <label for="p1b">&lt;link&gt;</label>
+                        <input type="radio" id="p1c" name="pregunta1" value="&lt;href&gt;" />
+                        <label for="p1c">&lt;href&gt;</label>
+                        <input type="radio" id="p1d" name="pregunta1" value="&lt;a&gt;" />
+                        <label for="p1d">&lt;a&gt;</label>
+                    </div>
+                </div>
+                <div>
+                    <p>Pregunta 2: ¿Cuál es la etiqueta para insertar una imagen?</p>
+                    <div class="pregunta-opciones">
+                        <input type="radio" id="p2a" name="pregunta2" value="&lt;img&gt;" required />
+                        <label for="p2a">&lt;img&gt;</label>
+                        <input type="radio" id="p2b" name="pregunta2" value="&lt;image&gt;" />
+                        <label for="p2b">&lt;image&gt;</label>
+                        <input type="radio" id="p2c" name="pregunta2" value="&lt;picture&gt;" />
+                        <label for="p2c">&lt;picture&gt;</label>
+                        <input type="radio" id="p2d" name="pregunta2" value="&lt;src&gt;" />
+                        <label for="p2d">&lt;src&gt;</label>
+                    </div>
+                </div>
+                <div>
+                    <p>Pregunta 3: ¿Cuál es la etiqueta para crear una lista ordenada?</p>
+                    <div class="pregunta-opciones">
+                        <input type="radio" id="p3a" name="pregunta3" value="&lt;ul&gt;" required />
+                        <label for="p3a">&lt;ul&gt;</label>
+                        <input type="radio" id="p3b" name="pregunta3" value="&lt;ol&gt;" />
+                        <label for="p3b">&lt;ol&gt;</label>
+                        <input type="radio" id="p3c" name="pregunta3" value="&lt;li&gt;" />
+                        <label for="p3c">&lt;li&gt;</label>
+                        <input type="radio" id="p3d" name="pregunta3" value="&lt;list&gt;" />
+                        <label for="p3d">&lt;list&gt;</label>
+                    </div>
+                </div>
+                <div>
+                    <p>Pregunta 4: ¿Cuáles de las siguientes etiquetas son válidas en HTML5? (Selecciona todas las que correspondan)</p>
+                    <input type="checkbox" id="p4a" name="pregunta4a" value="&lt;section&gt;" />
+                    <label for="p4a">&lt;section&gt;</label><br />
+                    <input type="checkbox" id="p4b" name="pregunta4b" value="&lt;article&gt;" />
+                    <label for="p4b">&lt;article&gt;</label><br />
+                    <input type="checkbox" id="p4c" name="pregunta4c" value="&lt;center&gt;" />
+                    <label for="p4c">&lt;center&gt;</label><br />
+                    <input type="checkbox" id="p4d" name="pregunta4d" value="&lt;footer&gt;" />
+                    <label for="p4d">&lt;footer&gt;</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <!-- Grupo de Comentarios finales -->
+                <legend>Comentarios</legend>
+                <div>
+                    <label for="comentarios">Tus comentarios:</label><br />
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50" required></textarea>
+                </div>
+            </fieldset>
+
+            <div>
+                <!-- Botón Enviar -->
+                <input type="submit" value="Enviar Encuesta" />
+            </div>
+        </form>
+    </body>
+</html>

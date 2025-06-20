@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+/* Ejercicio 1 - Tamaños */
+
+div {
+    border: 2px solid #2c3e50;
+    background-color: lightblue;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.caja-1 {
+    width: 200px;
+    height: 100px;
+}
+
+.caja-2 {
+    width: 50%; /* 50% del ancho del contenedor */
+    height: 150px;
+}
+
+.caja-3 {
+    width: 80%;
+    height: 20vh; /* 20% de la altura de la ventana del navegador */
+}
+
+/* Ejercicio 2 - Dislpay */
+
+span, .bloque-1, .bloque-2, .bloque-3 {
+    display: inline-block;
+    border: 1px dashed #2c3e50;
+    background-color: #f0f0f0;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.bloque-1, .bloque-2, .bloque-3 {
+    width: 150px;
+    display: block;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Ejercicio 3 - Overflow */
+
+.contenedor-overflow {
+    border: 3px solid #ff5733;
+    width: 300px;
+    height: 150px;
+    margin: 20px auto; /* Centrado del contenedor */
+    background-color: #ffe0b3;
+    padding: 10px;
+    overflow: visible; /* Permite que el contenido desborde el contenedor */
+    overflow: hidden; /* Oculta el contenido que desborda el contenedor */
+    overflow: scroll; /* Siempre muestra las barras de desplazamiento */
+    overflow: auto; /* Permite el desplazamiento si el contenido es mayor que el contenedor */
+}
+
+.contenedor-overflow p {
+    margin: 0;
+}
+
+/* Ejercicio 4 - Visibilidad */
+
+.item {
+    border: 1px solid purple;
+    background-color: lavender;
+}
+
+.oculto-visibility {
+    visibility: hidden; /* El elemento ocupa espacio pero no es visible */
+    background-color: lightcoral;
+}
+
+.oculto-display {
+    display: none; /* El elemento no ocupa espacio y no es visible */
+    background-color: lightgreen;
+}
+
+button:hover {
+    visibility: hidden;
+}

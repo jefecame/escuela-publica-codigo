@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portafolio Personal</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+        <!-- Mis estilos -->
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+
+    <body data-bs-theme="dark" class="bg-body-secondary text-white">
+        <!-- Encabezado con barra de navegación fija con menú de hamburguesa en pantallas pequeñas -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top shadow fw-bold">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><i class="bi bi-briefcase"></i> Mi Portafolio</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre-mi"><i class="bi bi-person-lines-fill"></i> Sobre mí</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#proyectos"><i class="bi bi-star"></i> Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contacto"><i class="bi bi-envelope"></i> Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Sección "Sobre mí" informativa -->
+        <section id="sobre-mi" class="container mt-5 pt-5 fade-in">
+            <div class="card text-bg-dark shadow mb-4">
+                <div class="card-header bg-warning text-dark fw-bold"><i class="bi bi-person-lines-fill"></i> Sobre mí</div>
+                <div class="card-body">
+                    <h5 class="card-title">Hola, soy el Ing. Jesús Fernando Carrasco Mendoza</h5>
+                    <p class="card-text">Soy docente en Matemáticas y Cultura Digital. Me apasiona la enseñanza y la integración de la tecnología en el aula. Aquí puedes ver algunos de mis proyectos destacados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección "Proyectos" con carousel de imágenes -->
+        <section id="proyectos" class="container mt-5 fade-in">
+            <div class="card text-bg-dark shadow mb-4">
+                <div class="card-header bg-warning text-dark fw-bold"><i class="bi bi-star"></i> Proyectos</div>
+                <div class="card-body">
+                    <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/images/proyecto-01.png" class="d-block w-100" alt="Proyecto 1" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/proyecto-02.png" class="d-block w-100" alt="Proyecto 2" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/proyecto-03.png" class="d-block w-100" alt="Proyecto 3" />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección "Contacto" con formulario testeable en https://httpbin.org/post -->
+        <section id="contacto" class="container mt-5 mb-5 pb-5 fade-in">
+            <div class="card text-bg-dark shadow mb-4">
+                <div class="card-header bg-warning text-dark fw-bold"><i class="bi bi-envelope"></i> Contacto</div>
+                <div class="card-body">
+                    <form action="https://httpbin.org/post" method="post" target="_blank">
+                        <fieldset class="mb-4 border rounded p-3 position-relative fieldset-control">
+                            <legend class="fs-5 mb-0 float-none px-2 w-auto">Datos</legend>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label"><i class="bi bi-person"></i> Nombre</label>
+                                <input type="text" class="form-control focus-ring-warning" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label"><i class="bi bi-envelope-at"></i> Correo Electrónico</label>
+                                <input type="email" class="form-control focus-ring-warning" id="email" name="email" placeholder="tucorreo@ejemplo.com" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+$" />
+                            </div>
+                        </fieldset>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label"><i class="bi bi-chat"></i> Mensaje</label>
+                            <textarea class="form-control focus-ring-warning" id="mensaje" name="mensaje" placeholder="Tu mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-custom-hover">Enviar <i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de página de posición fija -->
+        <footer>
+            <div class="bg-body-secondary text-white text-center py-3 border-top fixed-bottom shadow-lg">
+                <p>&copy; 2024 Mi Portafolio Personal. <strong>Ing. Jesús Fernando Carrasco Mendoza</strong></p>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
+</html>

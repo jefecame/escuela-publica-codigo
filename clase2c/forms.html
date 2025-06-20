@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formularios</title>
+    </head>
+    <body>
+        <h3>Ejemplos de formularios</h3>
+        <form action="https://example.com/submit" method="POST">
+            <fieldset>
+                <legend>Inicio de sesión</legend>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" minlength="5" maxlength="10" required />
+                <br /><br />
+                <label for="pass">Contraseña:</label>
+                <input type="password" id="pass" name="pass" required />
+                <br /><br />
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+        <br />
+        <hr />
+        <br />
+        <form action="https://example.com/submit" method="POST" onsubmit="return false;">
+            <fieldset>
+                <legend>Registro (Validación con Pattern)</legend>
+                <label for="phone">Teléfono</label>
+                <input type="text" id="phone" name="phone" pattern="[0-9]{10}" title="Número de teléfono de 10 dígitos" placeholder="xxxxxxxxxx" required />
+                <br /><br />
+                <label for="rfc">RFC:</label>
+                <input type="text" name="rfc" id="rfc" pattern="^[A-ZÑ&]{3,4}\d{6}[A-Z0-9]{3}$" title="Formato: 4 letras, 6 números y 3 letras o números" placeholder="AAAA000000AAA" required />
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+        <br />
+        <hr />
+        <br />
+        <form>
+            <fieldset>
+                <legend>Tipos de input</legend>
+                <label for="txt">Texto</label>
+                <input type="text" id="txt" name="txt" />
+                <hr />
+                <label for="num">Numéricos</label>
+                <input type="number" id="num" name="num" />
+                <hr />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" />
+                <hr />
+                <label for="">Contraseña</label>
+                <input type="password" name="" id="" />
+                <hr />
+                <label for="">Colores</label>
+                <input type="color" name="" id="" />
+                <hr />
+                <label for="">Fechas</label>
+                <input type="date" name="" id="" />
+                <hr />
+                <label for="">Archivos</label>
+                <input type="file" accept="image/*" />
+                <hr />
+                <label for="">Selección</label>
+                <select name="" id="">
+                    <option value="1">Java</option>
+                    <option value="2">Python</option>
+                    <option value="3">C++</option>
+                    <option value="4">JavaScript</option>
+                </select>
+                <br /><br />
+                <label for="">Selección 2</label>
+                <input list="lenguajes" placeholder="Selección" />
+                <datalist id="lenguajes">
+                    <option value="Java"></option>
+                    <option value="Python"></option>
+                    <option value="C++"></option>
+                    <option value="JavaScript"></option>
+                    <option value="PHP"></option>
+                    <option value="Ruby"></option>
+                </datalist>
+
+                <hr />
+                <label for="">CheckBox 1</label>
+                <input type="checkbox" name="" id="" />
+                <label for="">CheckBox 2</label>
+                <input type="checkbox" name="" id="" />
+                <label for="">CheckBox 3</label>
+                <input type="checkbox" name="" id="" />
+                <hr />
+                <label for="">Radio 1</label>
+                <input type="radio" name="radio" id="" />
+                <label for="">Radio 2</label>
+                <input type="radio" name="radio" id="" />
+                <label for="">Radio 3</label>
+                <input type="radio" name="radio" id="" />
+                <hr />
+                <label for="">Rango</label>
+                <input type="range" name="" id="" />
+                <hr />
+                <label for="">Textarea</label>
+                <textarea name="" id="" cols="25" rows="5">Textarea...</textarea>
+            </fieldset>
+        </form>
+        <br /><br /><br />
+    </body>
+</html>
