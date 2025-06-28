@@ -1,0 +1,43 @@
+# Archivo docker-compose.yml para PostgreSQL y pgAdmin
+
+services:
+  # Servicio de base de datos PostgreSQL
+  postgres:
+    image: postgres:15  # Imagen oficial de PostgreSQL versión 15
+    container_name: psql
+    restart: always
+    environment:
+      POSTGRES_USER: admin       # Usuario de la base de datos
+      POSTGRES_PASSWORD: admin123  # Contraseña
+      POSTGRES_DB: ejemplo_db     # Nombre de la base de datos inicial
+    ports:
+      - "5432:5432"  # Expone el puerto para conexión desde host
+    networks:
+      - pgnetwork
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Volumen persistente
+
+  # Servicio de pgAdmin para administrar PostgreSQL desde navegador
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@demo.com  # Correo para login en pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: admin123     # Contraseña
+    ports:
+      - "5050:80"  # Expone el puerto 80 del contenedor como 5050 en el host
+    networks:
+      - pgnetwork
+
+# Red para conectar los servicios entre sí
+networks:
+  pgnetwork:
+    driver: bridge
+
+# Volumen para persistir los datos de PostgreSQL
+volumes:
+  pgdata:
+
+# correr con: docker compose up -d
+# detener con: docker compose down
