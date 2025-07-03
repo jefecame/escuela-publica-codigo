@@ -3,7 +3,7 @@
 services:
   # Servicio de base de datos PostgreSQL
   postgres:
-    image: postgres:15  # Imagen oficial de PostgreSQL versión 15
+    image: postgres:latest  # Imagen oficial de PostgreSQL versión 15
     container_name: psql
     restart: always
     environment:
@@ -19,7 +19,7 @@ services:
 
   # Servicio de pgAdmin para administrar PostgreSQL desde navegador
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     container_name: pgadmin
     restart: always
     environment:
